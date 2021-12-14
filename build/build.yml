@@ -4,7 +4,7 @@ parameters:
 
 steps:
 - task: DotNetCoreInstaller@0
-  displayName: Use .NET Core sdk 3.1.0
+  displayName: Use .NET Core sdk 3.1
   inputs:
     version: 3.1
 
