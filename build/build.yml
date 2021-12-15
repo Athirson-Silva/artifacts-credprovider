@@ -3,9 +3,10 @@ parameters:
   nuspecProperties: ''
 
 steps:
-- task: DotNetCoreInstaller@0
+- task: UseDotNet@2
   displayName: Use .NET 6
   inputs:
+    packageType: sdk
     version: 6.0.1
 
 - ${{ if eq(parameters.sign, 'true') }}:
