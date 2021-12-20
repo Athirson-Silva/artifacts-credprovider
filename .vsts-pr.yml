@@ -10,6 +10,9 @@ variables:
   BuildConfiguration: 'Debug'
   TeamName: 'Package Experience'
 
+pool:
+  vmImage: 'windows-latest'
+
 steps:
 - template: build/build.yml
   parameters:
