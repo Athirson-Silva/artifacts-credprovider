@@ -6,14 +6,15 @@ queue:
 
 trigger: none
 
-pool:
-  vmImage: 'windows-latest'
-
 variables:
   BuildConfiguration: 'Debug'
   TeamName: 'Package Experience'
 
-steps:
-- template: build/build.yml
-  parameters:
-    nuspecProperties: 'VersionSuffix=-PR-$(Build.BuildNumber)'
+jobs:
+- job:
+  pool:
+    vmImage: 'windows-latest'
+  steps:
+  - template: build/build.yml
+    parameters:
+      nuspecProperties: 'VersionSuffix=-PR-$(Build.BuildNumber)'
