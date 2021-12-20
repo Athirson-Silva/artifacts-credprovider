@@ -9,6 +9,13 @@ steps:
     packageType: sdk
     version: 6.x
 
+  steps:
+- task: UseDotNet@2
+  displayName: Use .NET Core 3.1
+  inputs:
+    packageType: sdk
+    version: 3.1.x  
+
 - ${{ if eq(parameters.sign, 'true') }}:
   - task: ms-vseng.MicroBuildTasks.30666190-6959-11e5-9f96-f56098202fef.MicroBuildSigningPlugin@1
     displayName: Install Signing Plugin
